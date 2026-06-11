@@ -16,5 +16,5 @@ struct Activites : Identifiable {
     var image: ImageResource?
     var localization: String
     var date: String
-    var heure: String
+    var time: String
 }
