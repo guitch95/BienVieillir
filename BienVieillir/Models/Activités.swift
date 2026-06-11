@@ -15,4 +15,6 @@ struct Activites : Identifiable {
     var color: Color?
     var image: ImageResource?
     var localization: String
+    var date: String
+    var heure: String
 }
