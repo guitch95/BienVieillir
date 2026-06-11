@@ -59,7 +59,8 @@ struct DetenteView: View {
                     if timerCount > 5 {
                         timerCount = 0
                         breathAction =
-                            breathAction == "Inspirer..." ? "Expirer..." : "Inspirer..."
+                            breathAction == "Inspirer..."
+                            ? "Expirer..." : "Inspirer..."
                         withAnimation(.easeInOut(duration: 5).delay(0.1)) {
                             startAnimation.toggle()
                         }
