@@ -6,8 +6,13 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 struct Activites : Identifiable {
     var id = UUID()
+    var name: String
+    var description: String
+    var color: Color?
+    var image: ImageResource?
+    var localization: String
 }
