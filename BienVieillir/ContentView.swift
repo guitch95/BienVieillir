@@ -19,7 +19,7 @@ struct ContentView: View {
             }
             
             Tab("Détente", systemImage: "apple.meditate.circle.fill") {
-                Text("Détente")
+                DetenteView()
             }
             
             Tab("Favoris", systemImage: "star.circle") {
