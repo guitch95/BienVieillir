@@ -32,14 +32,12 @@ struct ActivityView: View {
             
                 
                 Section {
-                    
                     Text("Suivi d'activité")
-                        .padding(10)
+                        .padding()
                         .background(.background.secondary)
                         .clipShape(.rect(cornerRadius: 10))
                     
                     HStack (spacing: 24) {
-                        
                         ForEach (0..<3, id: \.self) {circle in
                             ZStack {
                             Circle ()
@@ -56,7 +54,9 @@ struct ActivityView: View {
                             
                             // Text affichant le pourcentage
                             HStack(alignment: .bottom, spacing: 0) {
-                                Text("\(percentage)\(Text("%").font(.title2))").font(.largeTitle).monospacedDigit()
+                                Text("\(percentage)\(Text("%"))")
+                                    .font(.title2)
+                                    .monospacedDigit()
                             }
                             .onTapGesture {
                                 withAnimation(.easeOut(duration: 3)) {
@@ -88,8 +88,7 @@ struct ActivityView: View {
                     ScrollView {
                         
                         VStack (spacing: 16) {
-                            ForEach(vm.arrOfActivity)
-                            {activite in
+                            ForEach(vm.arrOfActivity) { activite in
                                 VStack(alignment: .leading) {
                                     Text(activite.name)
                                     Text(activite.name)

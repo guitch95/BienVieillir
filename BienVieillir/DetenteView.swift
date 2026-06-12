@@ -19,7 +19,7 @@ struct DetenteView: View {
 
     var body: some View {
         ZStack {
-            Color.yellow.opacity(0.1)
+            Color(.displayP3, red: 0.97, green: 0.96, blue: 0.93)
                 .ignoresSafeArea()
 
             VStack(spacing: 100) {
