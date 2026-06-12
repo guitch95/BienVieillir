@@ -12,7 +12,7 @@ struct BienVieillirApp: App {
     @State private var vm = ViewModel()
     var body: some Scene {
         WindowGroup {
-            conseilsView()
+            ActivityDetailsView()
                 .environment(vm)
         }
     }
