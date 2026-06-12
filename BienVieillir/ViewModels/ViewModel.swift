@@ -166,7 +166,6 @@ final class ViewModel {
             color: .blue,
             image: nil,
             localization: "Espace public numérique"
-           
         ),
     ]
 
