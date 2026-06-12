@@ -10,20 +10,20 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Tab("Activités", systemImage: "figure.walk.circle.fill") {
-                Text("Activités")
+            Tab("Suivi", systemImage: "person.fill") {
+                
             }
             
-            Tab("Conseils", systemImage: "lightbulb.fill") {
-                Text("Conseils")
+            Tab("Activités", systemImage: "star.circle") {
+                ActivityDetailsView()
             }
             
             Tab("Détente", systemImage: "apple.meditate.circle.fill") {
                 DetenteView()
             }
             
-            Tab("Favoris", systemImage: "star.circle") {
-                Text("Favoris")
+            Tab("Conseils", systemImage: "lightbulb.fill") {
+                ConseilsView()
             }
             
         }
@@ -32,4 +32,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(ViewModel())
 }

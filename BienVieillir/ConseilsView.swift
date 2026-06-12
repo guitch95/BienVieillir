@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct conseilsView: View {
+struct ConseilsView: View {
     @Environment(ViewModel.self) private var vm
     
     var body: some View {
@@ -66,6 +66,6 @@ struct conseilsView: View {
     }
 }
 #Preview {
-    conseilsView()
+    ConseilsView()
         .environment(ViewModel())
 }
