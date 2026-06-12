@@ -90,7 +90,9 @@ final class ViewModel {
                 "Une promenade tranquille entre voisins pour bouger en douceur, prendre l'air et partager un moment convivial. Aucun niveau requis.",
             color: .green,
             image: .marcheDouce, //https://sites.google.com/site/usspcourseetnature/marche-douce
-            localization: "Parc du quartier"
+            localization: "Parc du quartier",
+            date: "Lundi 15 juin 2026",
+            time: "10h00 - 11h30"
         ),
         Activites(
             name: "Gym douce",
@@ -98,7 +100,9 @@ final class ViewModel {
                 "Des exercices adaptés en position assise ou debout pour entretenir l'équilibre, la souplesse et la mobilité, en toute sécurité.",
             color: .mint,
             image: nil,
-            localization: "Salle communale"
+            localization: "Salle communale",
+            date: "Mardi 16 juin 2026",
+            time: "9h30 - 10h30"
         ),
         Activites(
             name: "Atelier mémoire",
@@ -106,7 +110,9 @@ final class ViewModel {
                 "Jeux de mots, énigmes et petits exercices ludiques pour stimuler la mémoire et l'esprit, dans une ambiance détendue et bienveillante.",
             color: .indigo,
             image: nil,
-            localization: "Médiathèque municipale"
+            localization: "Médiathèque municipale",
+            date: "Mardi 16 juin 2026",
+            time: "14h30 - 16h00"
         ),
         Activites(
             name: "Café-rencontre",
@@ -114,7 +120,9 @@ final class ViewModel {
                 "Un moment chaleureux autour d'un café ou d'un thé pour discuter, faire de nouvelles connaissances et rompre la solitude.",
             color: .brown,
             image: nil,
-            localization: "Café du centre-ville"
+            localization: "Café du centre-ville",
+            date: "Mercredi 17 juin 2026",
+            time: "15h00 - 17h00"
         ),
         Activites(
             name: "Jardinage partagé",
@@ -122,7 +130,9 @@ final class ViewModel {
                 "Planter, arroser et voir pousser ensemble. Une activité apaisante en plein air qui crée du lien et procure une vraie fierté.",
             color: .green,
             image: nil,
-            localization: "Jardin partagé du quartier"
+            localization: "Jardin partagé du quartier",
+            date: "Jeudi 18 juin 2026",
+            time: "9h30 - 11h30"
         ),
         Activites(
             name: "Atelier cuisine",
@@ -130,7 +140,9 @@ final class ViewModel {
                 "Préparer ensemble des recettes simples et savoureuses, puis les déguster en groupe. Convivialité et plaisir garantis.",
             color: .orange,
             image: nil,
-            localization: "Cuisine du foyer-club"
+            localization: "Cuisine du foyer-club",
+            date: "Jeudi 18 juin 2026",
+            time: "11h00 - 14h00"
         ),
         Activites(
             name: "Chant et chorale",
@@ -138,7 +150,9 @@ final class ViewModel {
                 "Chanter ensemble des airs connus pour le plaisir, sans pression. Une activité joyeuse qui apaise et rassemble.",
             color: .pink,
             image: nil,
-            localization: "Maison des associations"
+            localization: "Maison des associations",
+            date: "Vendredi 19 juin 2026",
+            time: "14h00 - 15h30"
            
         ),
         Activites(
@@ -147,7 +161,9 @@ final class ViewModel {
                 "Des séances douces de respiration et de pleine conscience pour réduire le stress, mieux dormir et retrouver le calme intérieur.",
             color: .purple,
             image: nil,
-            localization: "Espace bien-être"
+            localization: "Espace bien-être",
+            date: "Vendredi 19 juin 2026",
+            time: "16h30 - 17h30"
             
         ),
         Activites(
@@ -156,7 +172,9 @@ final class ViewModel {
                 "Cartes, dominos, scrabble… Des après-midis ludiques pour rire, échanger et garder l'esprit vif en bonne compagnie.",
             color: .yellow,
             image: nil,
-            localization: "Club de loisirs"
+            localization: "Club de loisirs",
+            date: "Samedi 20 juin 2026",
+            time: "14h00 - 17h00"
             
         ),
         Activites(
@@ -165,7 +183,10 @@ final class ViewModel {
                 "Apprendre à utiliser son téléphone ou sa tablette pour rester en contact avec ses proches, à son rythme et sans jugement.",
             color: .blue,
             image: nil,
-            localization: "Espace public numérique"
+            localization: "Espace public numérique",
+            date: "Lundi 22 juin 2026",
+            time: "14h30 - 16h00"
+           
         ),
     ]
 

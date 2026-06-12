@@ -91,8 +91,8 @@ struct ActivityView: View {
                             ForEach(vm.arrOfActivity) { activite in
                                 VStack(alignment: .leading) {
                                     Text(activite.name)
-                                    Text(activite.name)
-                                    Text(activite.name)
+                                    Text(activite.date)
+                                    Text(activite.time)
                                 }
                                 .font(.headline)
                                 .frame(width: 320, height: 70, alignment: .leading)

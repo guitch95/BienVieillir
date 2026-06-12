@@ -59,7 +59,9 @@ struct OneActivityDetailView: View {
         name: "Marche douce en groupe",
         description: "Une promenade tranquille entre voisins pour bouger en douceur, prendre l'air et partager un moment convivial. Aucun niveau requis.",
         image: .marcheDouce,
-        localization: "Parc du quartier"
+        localization: "Parc du quartier",
+        date: "Lundi 15 juin 2026",
+        time: "10h00 - 11h30"
     )
     )
 }
