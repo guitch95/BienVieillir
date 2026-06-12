@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Tab("Suivi", systemImage: "person.fill") {
-                
+            Tab("Suivi", systemImage: "chart.bar.fill") {
+                ActivityView()
             }
             
             Tab("Activités", systemImage: "star.circle") {
