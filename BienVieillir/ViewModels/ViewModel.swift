@@ -35,7 +35,7 @@ final class ViewModel {
         Conseils(
             title: "Hydratez-vous bien",
             description:
-                "Avec l'âge, on ressent moins la soif. Pensez àboire de l'eau régulièrement dans la journée, même sans en ressentir le besoin.",
+                "Avec l'âge, on ressent moins la soif. Pensez à boire de l'eau régulièrement dans la journée, même sans en ressentir le besoin.",
             color: .blue,
             image: nil
         ),
@@ -89,7 +89,7 @@ final class ViewModel {
             description:
                 "Une promenade tranquille entre voisins pour bouger en douceur, prendre l'air et partager un moment convivial. Aucun niveau requis.",
             color: .green,
-            image: nil,
+            image: .marcheDouce, //https://sites.google.com/site/usspcourseetnature/marche-douce
             localization: "Parc du quartier"
         ),
         Activites(
@@ -139,6 +139,7 @@ final class ViewModel {
             color: .pink,
             image: nil,
             localization: "Maison des associations"
+           
         ),
         Activites(
             name: "Méditation et relaxation",
@@ -147,6 +148,7 @@ final class ViewModel {
             color: .purple,
             image: nil,
             localization: "Espace bien-être"
+            
         ),
         Activites(
             name: "Jeux de société",
@@ -155,6 +157,7 @@ final class ViewModel {
             color: .yellow,
             image: nil,
             localization: "Club de loisirs"
+            
         ),
         Activites(
             name: "Atelier numérique",
@@ -163,6 +166,7 @@ final class ViewModel {
             color: .blue,
             image: nil,
             localization: "Espace public numérique"
+           
         ),
     ]
 
