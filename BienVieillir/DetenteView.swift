@@ -21,6 +21,7 @@ struct DetenteView: View {
         ZStack {
             Color.yellow.opacity(0.1)
                 .ignoresSafeArea()
+
             VStack(spacing: 100) {
                 Text(breathAction)
                     .font(.title)
@@ -33,24 +34,19 @@ struct DetenteView: View {
                 ZStack {
                     ForEach(1...8, id: \.self) { index in
                         Circle()
-                            .fill(.teal.opacity(0.2))
-                            .overlay {
-                                Circle()
-                                    .stroke(.teal, lineWidth: 4)
-                            }
+                            .fill(.teal.opacity(0.5))
                             .frame(width: 200, height: 200)
                             .offset(x: startAnimation ? 0 : 75)
                             .rotationEffect(.init(degrees: Double(index * 45)))
                             .rotationEffect(
                                 .init(degrees: startAnimation ? -45 : 0)
                             )
-
                     }
 
                 }
                 .frame(height: 300)
                 .scaleEffect(startAnimation ? 0.8 : 1)
-                .overlay {
+                .overlay(content: {
                     Text("\(count == 0 ? 3 : count)")
                         .font(.title)
                         .fontWeight(.semibold)
@@ -58,7 +54,7 @@ struct DetenteView: View {
                         .animation(.easeInOut, value: count)
                         .opacity(showBreatheView ? 1 : 0)
 
-                }
+                })
                 .padding(.bottom, 40)
                 .onReceive(
                     Timer.publish(every: 0.01, on: .main, in: .common)
@@ -100,8 +96,8 @@ struct DetenteView: View {
                 }
 
             }
-        }
 
+        }
     }
 
     func startBreathing() {
@@ -120,7 +116,6 @@ struct DetenteView: View {
                 startAnimation = true
             }
         }
-
     }
 }
 
