@@ -182,7 +182,7 @@ final class ViewModel {
             description:
                 "Apprendre à utiliser son téléphone ou sa tablette pour rester en contact avec ses proches, à son rythme et sans jugement.",
             color: .blue,
-            image: .atelierNumerique,
+            image: .atelierCuisine,
             localization: "Espace public numérique",
             date: "Lundi 22 juin 2026",
             time: "14h30 - 16h00"
