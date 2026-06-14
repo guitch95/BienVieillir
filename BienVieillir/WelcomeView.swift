@@ -10,7 +10,7 @@ struct WelcomeView: View {
 
             Image(systemName: "leaf.fill")
                 .font(.system(size: 80))
-                .foregroundStyle(Color("Sauge"))
+                .foregroundStyle(.sauge)
 
             Text("BienVieillir")
                 .font(.largeTitle)
@@ -29,7 +29,7 @@ struct WelcomeView: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color("Sauge"))
+                    .background(.sauge)
                     .clipShape(RoundedRectangle(cornerRadius: 16))
             }
             .padding(.horizontal)
@@ -37,7 +37,7 @@ struct WelcomeView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("Creme"))
+        .background(.creme)
     }
 }
 

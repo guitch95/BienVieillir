@@ -25,9 +25,8 @@ struct ContentView: View {
                     ConseilsView()
                 }
             }
-            .tint(Color.sauge)
+            .tint(.sauge)
         }
-        .tint(.sauge)
     }
 }
 
