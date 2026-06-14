@@ -11,58 +11,54 @@ struct conseilsView: View {
     @Environment(ViewModel.self) private var vm
     
     var body: some View {
-        VStack(spacing: 12){
+        ZStack {
+            Color.creme
+                .ignoresSafeArea()
             
-            Text("Nos Conseils")
-                .font(.title.bold())
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .top, spacing: 12) {
-                    ForEach(vm.arrOfConseil) { conseil in
-                        VStack(alignment: .leading) {
-                            Text(conseil.title)
-                                .font(.headline)
-                                .frame(height: 60)
-                               
-                            Text(conseil.description)
-                                .lineSpacing(8)
-                            Spacer()
+            VStack {
+                Text("Nos conseils")
+                    .font(.title)
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .leading,
+                    )
+                    .fontWeight(.semibold)
+                
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 22){
+                        ForEach(vm.arrOfConseil) { conseil in
+                            VStack(alignment: .leading, spacing: 14) {
+                                HStack(alignment: .center, spacing: 12) {
+                                    Image(systemName: "person.fill")
+                                        .foregroundStyle(.sauge)
+                                        .font(.title2)
+                                    Text(conseil.title)
+                                        .font(.title3)
+                                        .fontWeight(.medium)
+                                }
+                                
+                                Text(
+                                    conseil.description
+                                )
+                                .lineSpacing(5)
+                                
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                            .background(.white, in: .rect(cornerRadius: 12))
+                            .overlay(
+                                .gray.opacity(0.3),
+                                in: .rect(cornerRadius: 12).stroke(lineWidth: 1)
+                            )
                         }
-                        .frame(width: 200, height: 250)
-                        .padding()
-                        .background(.background.secondary)
-                        .clipShape(.rect(cornerRadius: 25))
-
+                        
                     }
                 }
+                
             }
-            .padding(.bottom)
-           
-            Text("Nos Ressources")
-                .font(.title.bold())
+            .padding()
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .top, spacing: 12) {
-                    ForEach(vm.arrOfActivity) { activite in
-                        VStack(alignment: .leading) {
-                            Text(activite.name)
-                                .font(.headline)
-                                .frame(height: 60)
-                            
-                            Text(activite.description)
-                                .lineSpacing(8)
-                            Spacer()
-                        }
-                        .frame(width: 200, height: 250)
-                        .padding()
-                        .background(.background.secondary)
-                        .clipShape(.rect(cornerRadius: 25))
-                    }
-                }
-            }
         }
-        .padding()
-        Spacer()
     }
 }
 #Preview {
