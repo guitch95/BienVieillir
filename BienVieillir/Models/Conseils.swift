@@ -13,5 +13,5 @@ struct Conseils : Identifiable {
     var title: String
     var description: String
     var color: Color?
-    var image: ImageResource?
+    var image: String
 }

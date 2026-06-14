@@ -7,51 +7,40 @@
 import SwiftUI
 
 struct OneActivityDetailView: View {
-    let activity: Activites // reçoit l'activité sur laquelle l'utilisateur clique
-
-    @Environment(\.dismiss) private var dismiss
-    
+    let activity: Activites
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                Text(activity.name)
-                    .font(.title)
-                    .bold()
-                    .padding()
+        ZStack {
+            Color.creme
+                .ignoresSafeArea()
+            VStack(spacing: 30){
+                Image(activity.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
                 Text("Lieu : \(activity.localization)")
                     .foregroundStyle(.gray)
-                    .padding()
-                
-                Image(.marcheDouce)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 300)
-                    .clipped()
-                    .ignoresSafeArea(edges:.top)
-                    .padding()
                 Text(activity.description)
-                    .font(.title2)
-                    .padding()
-
-                Button(action : {
+                    .font(.title3)
+                Button {
                     print("Je veux participer !")
-                }) {
+                } label:  {
                     Text("Je veux particper !")
-                        .font(.headline)
+                        .foregroundStyle(.white)
                         .bold()
-                        .foregroundStyle(.black)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(.orange)
-                        .clipShape(Capsule())
+                        .background(.sauge, in: .capsule)
+                    
+                    
                     
                 }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
                 
             }
-            
+            .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(activity.name)
         }
+        
     }
 }
 #Preview {

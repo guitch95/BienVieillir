@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct Activites : Identifiable {
+struct Activites : Identifiable, Hashable {
     var id = UUID()
     var name: String
     var description: String
     var color: Color?
-    var image: ImageResource?
+    var image: ImageResource
     var localization: String
     var date: String
     var time: String

@@ -9,44 +9,62 @@ import SwiftUI
 
 struct ActivityDetailsView: View {
     @Environment(ViewModel.self) private var vm
-    
-    let colums = [
+    let columns = [
         GridItem(.flexible(), spacing: 16),
         GridItem(.flexible(), spacing: 16)
     ]
-    var body: some View {
-        NavigationStack {
-            ZStack {
-                Color("BackgroundScreen")
-                    .ignoresSafeArea()
-                
-                ScrollView {
-                    LazyVGrid(columns: colums, spacing: 16) {
-                        ForEach (vm.arrOfActivity) { activite in
-                            NavigationLink(destination: OneActivityDetailView(activity: activite)) {
-                                VStack {
-                                    Text(activite.name)
-                                        .font(.headline)
-                                        .multilineTextAlignment(.center)
+        var body: some View {
+                NavigationStack {
+                    ZStack {
+                        Color.creme
+                            .ignoresSafeArea()
+                        ScrollView {
+                            LazyVGrid(columns: columns, spacing: 16) {
+                                ForEach(vm.arrOfActivity) { activite in
+                                    NavigationLink(value: activite) {
+                                        VStack(alignment: .leading, spacing: 12) {
+                                            Image(systemName: "person.fill")
+                                                .foregroundStyle(.sauge)
+                                                .font(.title2)
+                                            
+                                            Text(activite.name)
+                                                .fontWeight(.medium)
+                                                .multilineTextAlignment(.leading)
+                                            
+                                            Text(activite.date)
+                                            
+                                            Text(activite.time)
+                                                .font(.subheadline)
+                                            
+                                        }
+                                        .padding()
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .frame(height: 180)
+                                        .background(.white, in: .rect(cornerRadius: 12))
+                                        .overlay(
+                                            .gray.opacity(0.3),
+                                            in: .rect(cornerRadius: 12).stroke(
+                                                lineWidth: 1
+                                            )
+                                        )
                                         .foregroundStyle(.black)
+                                        
+                                    }
+                                    
                                 }
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 150)
-                                .background(Color.orange.opacity(0.7))
-                                .cornerRadius(12)
-                                
                             }
+                            .navigationDestination(
+                                for: Activites.self
+                            ) { activite in
+                                OneActivityDetailView(activity: activite)
+                            }
+                            
+                            .padding()
                         }
+                        .scrollIndicators(.hidden)
+                        .navigationTitle("Activités")
                     }
-                    .padding()
                 }
-            }
-                .navigationTitle("Activités à choisir")
-                .navigationBarTitleDisplayMode(.large)
-            }
-                
-                
-                
             }
         }
 #Preview {
