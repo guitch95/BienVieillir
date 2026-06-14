@@ -26,7 +26,7 @@ struct OneActivityDetailView: View {
                 Button {
                     vm.arrOfMeetings.append(activity)
                 } label:  {
-                    Text("Je veux particper")
+                    Text("Je veux participer")
                         .foregroundStyle(.white)
                         .bold()
                         .padding()
