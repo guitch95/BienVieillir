@@ -19,9 +19,8 @@ struct DetenteView: View {
 
     var body: some View {
         ZStack {
-            Color(.displayP3, red: 0.97, green: 0.96, blue: 0.93)
+            Color.creme
                 .ignoresSafeArea()
-
             VStack(spacing: 100) {
                 Text(breathAction)
                     .font(.title)
@@ -34,8 +33,9 @@ struct DetenteView: View {
                 ZStack {
                     ForEach(1...8, id: \.self) { index in
                         Circle()
-                            .fill(.teal.opacity(0.5))
+                            .fill(.sauge.opacity(0.3))
                             .frame(width: 200, height: 200)
+                            .overlay(.sauge, in: .circle.stroke(lineWidth: 2))
                             .offset(x: startAnimation ? 0 : 75)
                             .rotationEffect(.init(degrees: Double(index * 45)))
                             .rotationEffect(
@@ -89,7 +89,7 @@ struct DetenteView: View {
                         .padding(.vertical, 15)
                         .frame(width: 300)
                         .background(
-                            .teal,
+                            .sauge,
                             in: RoundedRectangle(cornerRadius: 12)
                         )
 

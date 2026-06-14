@@ -8,107 +8,91 @@
 import SwiftUI
 
 struct ActivityView: View {
-    
     @Environment(ViewModel.self) private var vm
-    @State private var angle: Double = 0
-    @State private var fillAmount: CGFloat = 0
-    @State private var percentage: Int = 0
-    
     var body: some View {
-        
         ZStack {
-           Color(.displayP3, red: 0.97, green: 0.96, blue: 0.93)
+            Color.creme
+                .ignoresSafeArea()
             VStack {
-                Section {
-                    Image(.avatar)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width:150, height: 150)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.blue, lineWidth: 4))
-                        .frame(maxWidth: .infinity)
-                }
-                .padding()
-            
-                
-                Section {
-                    Text("Suivi d'activité")
-                        .padding()
-                        .background(.background.secondary)
-                        .clipShape(.rect(cornerRadius: 10))
-                    
-                    HStack (spacing: 24) {
-                        ForEach (0..<3, id: \.self) {circle in
-                            ZStack {
-                            Circle ()
-                                .strokeBorder (lineWidth:15)
-                                .frame(width:100, height: 100)
-                                .foregroundColor(.gray.opacity(0.3))
-                            
-                            Circle()
-                                .trim(from:0, to: fillAmount)
-                                .stroke(style: StrokeStyle(lineWidth: 18, lineCap: .round, lineJoin: .round))
-                                .frame(width:100, height: 100)
-                                .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.purple, .pink]), startPoint: .top, endPoint: .bottom))
-                                .rotationEffect(.degrees(-90))
-                            
-                            // Text affichant le pourcentage
-                            HStack(alignment: .bottom, spacing: 0) {
-                                Text("\(percentage)\(Text("%"))")
-                                    .font(.title2)
-                                    .monospacedDigit()
-                            }
-                            .onTapGesture {
-                                withAnimation(.easeOut(duration: 3)) {
-                                    fillAmount = 1
-                                    angle += 360
-                                }
-                                
-                                Timer.scheduledTimer(withTimeInterval: 0.026, repeats: true) { timer in
-                                    if percentage < 100 {
-                                        percentage += 1
-                                    } else {
-                                        timer.invalidate()
-
-                                    }
-                                }
-                            }
+                VStack {
+                    HStack(spacing: 20) {
+                        Image(.bernard)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70)
+                            .padding(5)
+                            .overlay(.sauge, in: .circle.stroke(lineWidth: 3))
+                        VStack(alignment: .leading) {
+                            Text("Bonjour")
+                                .font(.title2)
+                            Text("Bernard")
+                                .font(.title)
+                                .bold()
                         }
-                        }
-                    }
-            }
-                
-                Section {
-                    
-                    Text("Activité à venir")
-                        .padding(10)
-                        .background(.background.secondary)
-                        .clipShape(.rect(cornerRadius: 10))
-                    
-                    ScrollView {
-                        
-                        VStack (spacing: 16) {
-                            ForEach(vm.arrOfActivity) { activite in
-                                VStack(alignment: .leading) {
-                                    Text(activite.name)
-                                    Text(activite.date)
-                                    Text(activite.time)
-                                }
-                                .font(.headline)
-                                .frame(width: 320, height: 70, alignment: .leading)
-                                .multilineTextAlignment(.leading)
-                                .padding()
-                                .background(.background.secondary)
-                                .clipShape(.rect(cornerRadius: 25))
-//                                .shadow( radius: 11, y: 8)
-                            }
-                        }
+                        Spacer()
                     }
                     .padding()
+                    .frame(maxWidth: .infinity)
                 }
-            }.padding(48)
+
+                VStack(alignment: .leading) {
+                    Text("Suivi hebdomadaire")
+                        .foregroundStyle(.sauge)
+                        .fontWeight(.semibold)
+                        .font(.title2)
+                    Gauge(value: Double(vm.arrOfMeetings.count) / 5.0) {
+                        HStack {
+                            Text("Activités à venir cette semaine")
+                                .font(.headline)
+                            Spacer()
+                        }
+                    } currentValueLabel: {
+                        Text("\(vm.arrOfMeetings.count) / 5")
+                    }
+                    .frame(height: 60)
+                    .padding()
+                    .background(
+                        .sauge.opacity(0.2),
+                        in: .rect(cornerRadius: 12)
+                    )
+                }
+                .padding()
+                .tint(.sauge.opacity(0.6))
+
+                Text("Mes activités à venir")
+                    .foregroundStyle(.sauge)
+                    .fontWeight(.semibold)
+                    .font(.title2)
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                ScrollView {
+                    ForEach(vm.arrOfMeetings) { meeting in
+                        VStack(alignment: .leading) {
+                            HStack(spacing: 24) {
+                                Image(systemName: "person")
+                                    .font(.title)
+                                VStack(alignment: .leading) {
+                                    Text(meeting.name)
+                                    Text("\(meeting.date) \(meeting.time)")
+                                }
+                            }
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(height: 80)
+                        .background(.white, in: .rect(cornerRadius: 12))
+                        .overlay(
+                            .gray,
+                            in: .rect(cornerRadius: 12).stroke(lineWidth: 2)
+                        )
+                    }
+                }
+                .padding()
+
+            }
+
         }
-        .ignoresSafeArea()
     }
 }
 
@@ -116,4 +100,3 @@ struct ActivityView: View {
     ActivityView()
         .environment(ViewModel())
 }
-

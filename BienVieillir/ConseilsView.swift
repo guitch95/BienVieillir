@@ -28,7 +28,7 @@ struct ConseilsView: View {
                         ForEach(vm.arrOfConseil) { conseil in
                             VStack(alignment: .leading, spacing: 14) {
                                 HStack(alignment: .center, spacing: 12) {
-                                    Image(systemName: "person.fill")
+                                    Image(systemName : conseil.image)
                                         .foregroundStyle(.sauge)
                                         .font(.title2)
                                     Text(conseil.title)

@@ -7,7 +7,9 @@
 import SwiftUI
 
 struct OneActivityDetailView: View {
+    @Environment(ViewModel.self) private var vm
     let activity: Activites
+    
     var body: some View {
         ZStack {
             Color.creme
@@ -22,17 +24,14 @@ struct OneActivityDetailView: View {
                 Text(activity.description)
                     .font(.title3)
                 Button {
-                    print("Je veux participer !")
+                    vm.arrOfMeetings.append(activity)
                 } label:  {
-                    Text("Je veux particper !")
+                    Text("Je veux particper")
                         .foregroundStyle(.white)
                         .bold()
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.sauge, in: .capsule)
-                    
-                    
-                    
                 }
                 
             }
@@ -53,5 +52,6 @@ struct OneActivityDetailView: View {
         time: "10h00 - 11h30"
     )
     )
+    .environment(ViewModel())
 }
 

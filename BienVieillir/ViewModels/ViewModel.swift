@@ -16,70 +16,70 @@ final class ViewModel {
             description:
                 "Appelez ou rendez visite à un proche au moins une fois par semaine. Un simple échange suffit à rompre la solitude et à réchauffer le cœur.",
             color: .pink,
-            image: ""
+            image: "phone.fill"
         ),
         Conseils(
             title: "Bougez un peu chaque jour",
             description:
                 "Une courte marche ou quelques étirements doux suffisent. L'important est la régularité, pas l'intensité, pour garder corps et moral en forme.",
             color: .green,
-            image: ""
+            image: "figure.walk"
         ),
         Conseils(
             title: "Soignez votre sommeil",
             description:
                 "Couchez-vous à des horaires réguliers et évitez les écrans le soir. Un bon repos apaise l'esprit et renforce la mémoire.",
             color: .indigo,
-            image: ""
+            image: "bed.double.fill"
         ),
         Conseils(
             title: "Hydratez-vous bien",
             description:
                 "Avec l'âge, on ressent moins la soif. Pensez à boire de l'eau régulièrement dans la journée, même sans en ressentir le besoin.",
             color: .blue,
-            image: ""
+            image: "waterbottle.fill"
         ),
         Conseils(
             title: "Mangez équilibré",
             description:
                 "Privilégiez les fruits, légumes et protéines. Un repas partagé est aussi un moment de plaisir et de convivialité à savourer.",
             color: .orange,
-            image: ""
+            image: "fork.knife"
         ),
         Conseils(
             title: "Respirez profondément",
             description:
                 "Quelques minutes de respiration lente, plusieurs fois par jour, aident à réduire le stress et à retrouver le calme intérieur.",
             color: .purple,
-            image: ""
+            image: "apple.meditate.circle.fill"
         ),
         Conseils(
             title: "Stimulez votre esprit",
             description:
                 "Lecture, mots croisés, jeux ou nouvelles activités : entretenir sa curiosité garde l'esprit vif et alerte au fil des années.",
             color: .yellow,
-            image: ""
+            image: "book.fill"
         ),
         Conseils(
             title: "Prenez l'air et la lumière",
             description:
                 "S'exposer un peu au soleil chaque jour améliore l'humeur et favorise un sommeil de meilleure qualité.",
             color: .mint,
-            image: ""
+            image: "sun.max.fill"
         ),
         Conseils(
             title: "Osez demander de l'aide",
             description:
                 "Solliciter un proche ou un professionnel n'est pas une faiblesse. Parler de ses difficultés est le premier pas vers le mieux-être.",
             color: .teal,
-            image: ""
+            image: "person.2.fill"
         ),
         Conseils(
             title: "Participez à une activité de groupe",
             description:
                 "Rejoindre un atelier ou un club crée du lien et donne un rythme à la semaine. Le partage est un véritable remède contre l'isolement.",
             color: .red,
-            image: ""
+            image: "person.3.fill"
         ),
     ]
 
@@ -189,5 +189,7 @@ final class ViewModel {
            
         ),
     ]
+    
+    var arrOfMeetings = [Activites]()
 
 }
